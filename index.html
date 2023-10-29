@@ -1,0 +1,22 @@
+<textarea id="txt" style="width: 500px; height: 500px"></textarea>
+<br />
+<button onclick="split()">Split</button>
+<br />
+<pre id="output"></pre>
+
+<script>
+  function split() {
+    const txt = document.getElementById("txt").value;
+    const pause = `&lt;break time="0.2s" /&gt;`;
+    // put pause between peroids and commas in txt string
+    const newTxt = txt
+      .replace(/\./g, `.\n${pause}\n`)
+      .replace(/,/g, `,\n${pause}\n`)
+      .replace(/\?/g, `\n?${pause}\n`)
+      .replace(/!/g, `!\n${pause}\n`);
+    console.log(newTxt);
+
+    // display output
+    document.getElementById("output").innerHTML = newTxt;
+  }
+</script>

@@ -7,7 +7,7 @@
 <script>
   function split() {
     const txt = document.getElementById("txt").value;
-    const pause = `&lt;break time="0.2s" /&gt;`;
+    const pause = `&lt;break time="0.4s" /&gt;`;
     // put pause between peroids and commas in txt string
     const newTxt = txt
       .replace(/\./g, `.\n${pause}\n`)
